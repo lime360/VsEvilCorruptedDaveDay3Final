@@ -61,10 +61,8 @@
 	<assets path="assets/songs"    library="songs"    exclude="*.mp3" unless="web"/>
 	<assets path="assets/shared"   library="shared"   exclude="*.ogg" if="web"/>
 	<assets path="assets/shared"   library="shared"   exclude="*.mp3" unless="web"/>
-	
-	<assets path='example_mods' rename='mods' embed='false'/>
+
 	<assets path='art/readme.txt' rename='PLEASE READ.txt' />
-	<!-- <template path='mods' /> -->
 	
 	<assets path="CHANGELOG.md" rename='changelog.txt'/>
 
@@ -88,9 +86,7 @@
 
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
-	<haxelib name="newgrounds"/>
 	<haxelib name="faxe" if='switch'/>
-	<haxelib name="polymod"/>
 	#if desktop
 	<haxelib name="discord_rpc" if="desktop"/>
 	#end
