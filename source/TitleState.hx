@@ -20,7 +20,6 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
 #if desktop
@@ -214,14 +213,6 @@ class TitleState extends MusicBeatState
 
 		credTextShit.visible = false;
 
-		ngSpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('newgrounds_logo'));
-		add(ngSpr);
-		ngSpr.visible = false;
-		ngSpr.setGraphicSize(Std.int(ngSpr.width * 0.8));
-		ngSpr.updateHitbox();
-		ngSpr.screenCenter(X);
-		ngSpr.antialiasing = true;
-
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
 		FlxG.mouse.visible = false;
@@ -291,13 +282,9 @@ class TitleState extends MusicBeatState
 
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
-			#if !switch
-			NGio.unlockMedal(60960);
-
 			// If it's Friday according to da clock
 			if (Date.now().getDay() == 5)
-				NGio.unlockMedal(61034);
-			#end
+				trace("idk");
 
 			titleText.animation.play('press');
 
@@ -410,7 +397,6 @@ class TitleState extends MusicBeatState
 				addMoreText('and you, for playing our mod!');
 			case 8:
 				deleteCoolText();
-				ngSpr.visible = false;
 			case 9:
 				createCoolText([curWacky[0]]);
 			case 10:
@@ -436,8 +422,6 @@ class TitleState extends MusicBeatState
 	{
 		if (!skippedIntro)
 		{
-			remove(ngSpr);
-
 			FlxG.camera.flash(FlxColor.WHITE, 4);
 			remove(credGroup);
 			FlxTween.tween(titleDude, {y: -50}, 1, {ease: FlxEase.expoInOut});
