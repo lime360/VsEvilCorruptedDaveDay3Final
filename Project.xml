@@ -82,11 +82,11 @@
 	<haxelib name="hscript" />
 
 	<haxelib name="actuate" />
-<haxelib name="extension-webm" if="desktop" />
+	<haxelib name="extension-webm" if="desktop" />
 
 	<!--In case you want to use the ui package-->
 	<haxelib name="flixel-ui" />
-	<haxelib name="faxe" if='switch'/>
+	<!-- <haxelib name="faxe" if='switch'/> -->
 	#if desktop
 	<haxelib name="discord_rpc" if="desktop"/>
 	#end
@@ -140,8 +140,6 @@
 	<icon path="art/icon64.png" size='64'/>
 	<icon path="art/iconOG.png" />
 
-
 	<!-- <haxedef name="SKIP_TO_PLAYSTATE" if="debug" /> -->
-	<haxedef name="NG_LOGIN" if="newgrounds" />
 	
 </project>
